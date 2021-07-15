@@ -1,10 +1,19 @@
 package ru.netology.manager;
 
 import ru.netology.domain.MovieView;
+import lombok.Data;
+
 
 public class MovieManager {
     private MovieView[] movies = new MovieView[0];
     private int allowedToDisplayMovies = 10;
+
+    public MovieManager() {
+    }
+
+    public MovieManager(int allowedToDisplayMovies) {
+        this.allowedToDisplayMovies = allowedToDisplayMovies;
+    }
 
     public MovieView[] getMovies() {
         return movies;
@@ -49,4 +58,6 @@ public class MovieManager {
         }
         return result;
     }
+
+
 }

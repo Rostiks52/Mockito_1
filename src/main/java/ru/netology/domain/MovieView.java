@@ -13,3 +13,4 @@ public class MovieView {
     private String movieTitle;
     private String movieGenre;
 }
+

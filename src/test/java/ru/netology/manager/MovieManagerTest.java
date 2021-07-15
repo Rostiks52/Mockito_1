@@ -32,14 +32,14 @@ class MovieManagerTest {
         manager.add(seventh);
         manager.add(eight);
         manager.add(ninth);
-        manager.add(tenth);
-        manager.add(eleventh);
+//        manager.add(tenth);
+//        manager.add(eleventh);
     }
     @Test
     public void shouldGetLessAbilityToDisplay(){
         manager.setAllowedToDisplayMovies(manager.getAllowedToDisplayMovies());
         MovieView [] actual = manager.showLastTen();
-        MovieView [] expected = new MovieView[]{fifth, first, forth, sixth, seventh};
+        MovieView [] expected = new MovieView[]{tenth, ninth, eight, seventh,sixth, fifth, forth, third, second, first};
         assertArrayEquals(expected, actual);
     }
     @Test
@@ -51,12 +51,12 @@ class MovieManagerTest {
     }
     @Test
     public void shouldGetMoreThanAllowed(){
-            manager.add(ninth);
             manager.add(tenth);
             manager.add(eleventh);
             manager.setAllowedToDisplayMovies(manager.getAllowedToDisplayMovies());
             MovieView [] actual = manager.showLastTen();
-            MovieView [] expected = new MovieView[]{fifth, second,third,forth,fifth, sixth, seventh, eight, ninth, tenth, eleventh};
+            MovieView [] expected = new MovieView[]{eleventh, tenth, ninth, eight, seventh, sixth, fifth, forth, third, second};
             assertArrayEquals(expected, actual);
     }
+
 }
