@@ -39,7 +39,7 @@ class MovieManagerTest {
     public void shouldGetLessAbilityToDisplay(){
         manager.setAllowedToDisplayMovies(manager.getAllowedToDisplayMovies());
         MovieView [] actual = manager.showLastTen();
-        MovieView [] expected = new MovieView[]{tenth, ninth, eight, seventh,sixth, fifth, forth, third, second, first};
+        MovieView [] expected = new MovieView[]{ninth, eight, seventh, sixth, fifth, forth, third, second, first};
         assertArrayEquals(expected, actual);
     }
     @Test
@@ -58,5 +58,17 @@ class MovieManagerTest {
             MovieView [] expected = new MovieView[]{eleventh, tenth, ninth, eight, seventh, sixth, fifth, forth, third, second};
             assertArrayEquals(expected, actual);
     }
+    @Test
+    public void shouldRemoveIfExists() {
+            manager.add(tenth);
+            manager.add(eleventh);
+            int idToRemove = 3;
+            manager.removeById(idToRemove);
+            MovieView[] actual = manager.getAll();
+            MovieView[] expected = new MovieView[]{eleventh, tenth, ninth, eight, seventh, sixth, fifth, forth, second, first};
+            assertArrayEquals(expected, actual);
+        }
 
 }
+
+

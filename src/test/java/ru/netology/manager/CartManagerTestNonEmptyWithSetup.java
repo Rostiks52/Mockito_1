@@ -31,16 +31,16 @@ public class CartManagerTestNonEmptyWithSetup {
         assertArrayEquals(expected, actual);
     }
 
-    @Test
-    public void shouldNotRemoveIfNotExists() {
-        int idToRemove = 4;
-
-        manager.removeById(idToRemove);
-
-        PurchaseItem[] actual = manager.getAll();
-        PurchaseItem[] expected = new PurchaseItem[]{third, second, first};
-
-        assertArrayEquals(expected, actual);
-    }
+//    @Test
+//    public void shouldNotRemoveIfNotExists() {
+//        int idToRemove = 4;
+//
+//        manager.removeById(idToRemove);
+//
+//        PurchaseItem[] actual = manager.getAll();
+//        PurchaseItem[] expected = new PurchaseItem[]{third, second, first};
+//
+//        assertArrayEquals(expected, actual);
+//    }
 }
 

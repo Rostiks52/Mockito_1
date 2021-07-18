@@ -58,6 +58,16 @@ public class MovieManager {
         }
         return result;
     }
-
-
+    public void removeById(int id) {
+        int length = movies.length - 1;
+        MovieView[] tmp = new MovieView[length];
+        int index = 0;
+        for (MovieView movie : movies){
+            if (movie.getId() != id) {
+                tmp[index] = movie;
+                index++;
+            }
+        }
+        movies = tmp;
+    }
 }
